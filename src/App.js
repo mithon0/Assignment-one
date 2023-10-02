@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react';
+import Cards from './Pages/Cards/Cards';
 
-function App() {
+const App = () => {
+  const [houses,setHouses]=useState([]);
+  console.log()
+
+  useEffect(()=>{
+    fetch("RentHouseData.json")
+    .then(res=>res.json())
+    .then(data=>setHouses(data))
+  },[])
+  console.log(houses)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='bg-indigo-50'>
+      <div className='mx-auto w-[470px] pt-5 text-center'>
+        <h1 className='text-3xl font-bold text-slate-700'>Feature Listed Property</h1>
+        <p className='text-base text-slate-500'>Real state can be bought sold,leased or rented and can be a valueable investment opportunity .the value is real state can be ..</p>
+      </div>
+      <div>
+          <div className='grid grid-cols-3'>
+              {
+                houses.map(house=><Cards
+                key={house.id}
+                house={house}
+                ></Cards>)
+              }
+          </div>
+      </div>
     </div>
   );
-}
+};
 
 export default App;
