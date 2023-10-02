@@ -7,12 +7,18 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import CardDetails from './Pages/CardDetails/CardDetails';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
   },
+  {
+    path:"/property/:id",
+    element:<CardDetails></CardDetails>,
+    loader:()=>fetch("RentHouseData.json")
+  }
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

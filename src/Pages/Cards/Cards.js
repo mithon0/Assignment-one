@@ -2,7 +2,7 @@ import React from 'react';
 import { FaMapMarkerAlt,FaHospital,FaBath,FaArrowsAlt,FaRegHeart, FaBed } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 const Cards = ({house}) => {
-    const {pictureURL,location,name,roomNumber,bathNumber,bedNumber,sft,rentPricePerMonth}=house;
+    const {pictureURL,location,name,roomNumber,bathNumber,bedNumber,sft,rentPricePerMonth,id}=house;
 
     return (
         <div className='mx-auto bg-white p-4 my-2 rounded-xl'>
@@ -46,7 +46,7 @@ const Cards = ({house}) => {
          <h2 className='font-bold text-xl text-blue-600'>${rentPricePerMonth}/ <span className='text-xs'>month</span></h2>
          <div className='mt-3 flex items-center'>
              
-             <button className='py-2 px-3 border-2 rounded-full hover:bg-slate-900 hover:text-white border-blue-900 text-blue-900'><Link>Read More</Link></button>
+             <button className='py-2 px-3 border-2 rounded-full hover:bg-slate-900 hover:text-white border-blue-900 text-blue-900'><Link to={`/property/${id}`}>Read More</Link></button>
          </div>
         </div>
      </div>
