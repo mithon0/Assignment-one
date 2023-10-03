@@ -114,7 +114,7 @@
         "bathNumber": 2,
         "sft": 1600,
         "rentPricePerMonth": 2000.0,
-        "city": "Seattle"
+        "city": "New York"
     },
     {
         "id": 10,
@@ -166,7 +166,7 @@
         "bathNumber": 2,
         "sft": 2100,
         "rentPricePerMonth": 2600.0,
-        "city": "Denver"
+        "city": "New York"
     },
     {
         "id": 14,
@@ -218,7 +218,7 @@
         "bathNumber": 3,
         "sft": 2400,
         "rentPricePerMonth": 2800.0,
-        "city": "Portland"
+        "city": "New York"
     },
     {
         "id": 18,
